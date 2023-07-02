@@ -1,8 +1,23 @@
-package main 
+package main
 
-import ("github.com/MTplusWebSystem/APIGOV1/router")
+import (
+	"fmt"
+	"github.com/MTplusWebSystem/APIGOV1/router"
+	"github.com/MTplusWebSystem/APIGOV1/config"
+)
 
-func main(){
-  print("\033[1;33mTOP PROJETOS \n")
-  router.Start()
+var (
+	logger *config.Logger
+)
+
+func main() {
+	fmt.Println("\033[1;33mAPI INICIALIZADA")
+
+	logger = config.ResponseLogger("main")
+	err := config.StartDB()
+	if err == nil {
+		logger.Error("ERRO NA INICIALIZAÇÃO",err)
+		return
+	}
+	router.Start()
 }

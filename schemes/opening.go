@@ -5,10 +5,11 @@ import (
 
 type Openings struct {
   gorm.Model
-  Role  string
+  Role        string
   CompanyName string 
-  Location string
-  Remote bool
-  Link string
-  Salary int64
+  Location    string
+  Remote      bool
+  Link        string
+  Salary      int64
 }
+
