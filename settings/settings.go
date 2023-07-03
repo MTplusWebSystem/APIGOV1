@@ -13,7 +13,7 @@ func SetERROR() error{
   return nil
 }
 
-func Logs(p settings) *Logger{
-  logger = NewLogger()
-  range logger
+func Logs(p string) *Logger{
+  logger = NewLogger(p)
+  return logger
 }
