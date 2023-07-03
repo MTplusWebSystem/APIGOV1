@@ -9,6 +9,11 @@ var(
   logger *Logger 
   )
   
-func Set(){
+func SetERROR() error{
   return nil
+}
+
+func Logs(p settings) *Logger{
+  logger = NewLogger()
+  range logger
 }
