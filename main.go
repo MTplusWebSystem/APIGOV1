@@ -12,10 +12,10 @@ var (
 
 func main(){
   Logger = settings.Logs("main")
- /* err := settings.SetERROR()
+ err := settings.SetERROR()
   if err != nil{
-    Logger.Errorf("ERROR NA MAIN %v",err)
-    return nil
-  }*/
+    Logger.Error("ERROR NA MAIN",err)
+    return 
+  }
   router.SysRouter()
 }
